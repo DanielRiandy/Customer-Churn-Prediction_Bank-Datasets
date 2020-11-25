@@ -7,6 +7,7 @@
             <th>
                 <td>No.</td>
                 <td>age</td>
+                <td>gender</td>
                 <td>dependetns</td>
                 <td>occupation</td>
                 <td>customer_nw_category</td>
@@ -14,8 +15,6 @@
                 <td>current_month_credit</td>
                 <td>previous_month_credit</td>
                 <td>churn</td>
-                <td>Female</td>
-                <td>Male</td> 
             </th>
             {% for item in data %}
             <tr>
@@ -32,7 +31,6 @@
                 <td>{{item[9]}}</td>
                 <td>{{item[10]}}</td>
                 <td>{{item[11]}}</td>
-                <td>{{item[12]}}</td>
                 
             </tr>
             {% endfor %}
@@ -46,26 +44,22 @@
         
         <div class="input-group mb-3" style="width: 500px">
             <label for="age">Customer Age:</label>
-            <input type="number" name="dependents" step="1" min="1" max="90" style="width: 250px" id="backers_count" class="form-control" required=True placeholder="Customer Age"/>
-            </div>
+            <input type="number" name="age" step="1" min="1" max="~" style="width: 250px" id="age" class="form-control" required=True placeholder="Customer Age"/>
+        </div>
 
         <div class="input-group mb-3" style="width: 500px">
             <span class="input-group-text" style="width: 125px">Gender:</span>
             <select name="gender" style="width: 250px" class="form-control" required="required">
             <option value="Female">Female</option>
             <option value="Male">Male</option>
-            <option disabled selected hidden>Your gender?</option>
-            </select>
-            </div>
+            <!-- <option disabled selected hidden>Your gender?</option> -->
+        </select>
+        </div>
 
-            <div class="input-group mb-3" style="width: 500px">
-                <span class="input-group-text" style="width: 125px">Customer Dependents:</span>
-                <select name="dependents" style="width: 250px" class="form-control" required="required">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option disabled selected hidden>Your gender?</option>
-                </select>
-                </div>
+        <div class="input-group mb-3" style="width: 500px">
+            <label for="dependents">Customer Dependents:</label>
+            <input type="number" name="dependents" step="1" min="0" max="1" style="width: 250px" id="dependents" class="form-control" required=True placeholder="Customer Dependents"/>
+        </div>
         
         <div class="input-group mb-3" style="width: 500px">
             <span class="input-group-text" style="width: 125px">Customer Occupation:</span>
@@ -75,9 +69,9 @@
             <option value="self_employed">Self Employed</option>
             <option value="company">Company</option>
             <option value="retired">Retired</option>
-            <option disabled selected hidden>Your occupation?</option>
+            <!-- <option disabled selected hidden>Your occupation?</option> -->
             </select>
-            </div>
+        </div>
 
         <div class="input-group mb-3" style="width: 500px">
             <span class="input-group-text" style="width: 125px">Customer NetWorth Category:</span>
@@ -85,27 +79,27 @@
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
-            <option disabled selected hidden>Your Networth category?</option>
-            </select>
-            </div>
+            <!-- <option disabled selected hidden>Your Networth category?</option> -->
+        </select>
+        </div>
 
 
         <div class="input-group mb-3" style="width: 500px">
             <label for="current_balance">Customer Current Balance:</label>
-            <input type="number" name="current_balance" step="0.01" min="-5503.96" max="1000000000" style="width: 250px" id="goal_usd" class="form-control" required=True placeholder="Customer Current Balance"/>
-            </div>
+            <input type="number" name="current_balance" step="0.000001" min="-~" max="~" style="width: 250px" id="current_balance" class="form-control" required=True placeholder="Customer Current Balance"/>
+        </div>
 
         <div class="input-group mb-3" style="width: 500px">
             <label for="current_month_credit">Customer current month credit:</label>
-            <input type="number" name="current_month_credit" step="0.01" min="0.01" max="1000000000" style="width: 250px" id="goal_usd" class="form-control" required=True placeholder="Customer Current Month Credit"/>
-            </div>
+            <input type="number" name="current_month_credit" step="0.000001" min="-~" max="~" style="width: 250px" id="current_month_credit" class="form-control" required=True placeholder="Customer Current Month Credit"/>
+        </div>
         <div class="input-group mb-3" style="width: 500px">
             <label for="previous_month_credit">Customer previous month credit:</label>
-            <input type="number" name="previous_month_credit" step="0.01" min="0.01" max="1000000000" style="width: 250px" id="goal_usd" class="form-control" required=True placeholder="Customer Previous Month Credit"/>
-            </div>
+            <input type="number" name="previous_month_credit" step="0.000001" min="-~" max="~" style="width: 250px" id="previous_month_credit" class="form-control" required=True placeholder="Customer Previous Month Credit"/>
+        </div>
 
         <br>
-        <a href="/result" target="_self">
+        <a href="http://127.0.0.1:5000/result" target="_self">
             <button type="submit" style="background-color: rgb(4,122,133); color: whitesmoke" class="btn btn-info">Predict Project</button>
         </a>
         </div>
